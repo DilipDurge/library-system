@@ -32,7 +32,7 @@ A simple library management system built with Spring Boot. This project demonstr
 1. **Clone the repository**
 
     ```bash
-    git clone https://github.com/yourusername/library-system.git
+    git clone <REPOSITORY_URL>
     cd library-system
     ```
 
