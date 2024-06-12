@@ -70,7 +70,11 @@ A simple library management system built with Spring Boot. This project demonstr
     spring.datasource.password=yourpassword
     spring.jpa.hibernate.ddl-auto=update
     ```
-
+5. **The APIs will be accessible at**
+   ```
+   http://localhost:8080/
+   ```
+   
 ### Docker Compose (Optional)
 
 The application run along with a PostgreSQL database using Docker Compose, create a `docker-compose.yml` file:
