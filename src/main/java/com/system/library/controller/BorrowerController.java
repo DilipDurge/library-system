@@ -26,16 +26,33 @@ public class BorrowerController {
         this.bookService = bookService;
     }
 
+    /**
+     * Register a new borrower
+     * @param borrower
+     * @return Borrower
+     */
     @PostMapping
     public ResponseEntity<Borrower> registerBorrower(@Valid @RequestBody Borrower borrower) {
         return ResponseEntity.ok(borrowerService.registerBorrower(borrower));
     }
 
+    /**
+     * Borrow a book
+     * @param borrowerId
+     * @param bookId
+     * @return Book
+     */
     @PostMapping("/{borrowerId}/borrow/{bookId}")
     public ResponseEntity<Book> borrowBook(@PathVariable @Min(1) Long borrowerId, @PathVariable @Min(1) Long bookId) {
         return ResponseEntity.ok(bookService.borrowBook(borrowerId, bookId));
     }
 
+    /**
+     * Return a book
+     * @param borrowerId
+     * @param bookId
+     * @return Book
+     */
     @PostMapping("/{borrowerId}/return/{bookId}")
     public ResponseEntity<Book> returnBook(@PathVariable @Min(1) Long borrowerId, @PathVariable @Min(1) Long bookId) {
         return ResponseEntity.ok(bookService.returnBook(borrowerId, bookId));

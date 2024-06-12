@@ -19,10 +19,10 @@ public class Borrower implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Name is mandatory")
+    @NotBlank(message = "Name of the borrower is mandatory")
     private String name;
 
-    @NotBlank(message = "Email is mandatory")
+    @NotBlank(message = "Email of the borrower is mandatory")
     @Email(message = "Email should be valid")
     private String email;
 }

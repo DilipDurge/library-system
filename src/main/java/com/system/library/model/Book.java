@@ -18,13 +18,13 @@ public class Book implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "ISBN is mandatory")
+    @NotBlank(message = "ISBN for the book is mandatory.")
     private String isbn;
 
-    @NotBlank(message = "Title is mandatory")
+    @NotBlank(message = "Title of the book is mandatory")
     private String title;
 
-    @NotBlank(message = "Author is mandatory")
+    @NotBlank(message = "Author of the book is mandatory")
     private String author;
 
     @ManyToOne

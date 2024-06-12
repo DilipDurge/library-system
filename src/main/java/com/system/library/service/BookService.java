@@ -24,6 +24,11 @@ public class BookService {
         this.borrowerRepository = borrowerRepository;
     }
 
+    /**
+     * Register a book.
+     * @param book
+     * @return Book
+     */
     public Book registerBook(Book book) {
         Optional<List<Book>> existingBook = bookRepository.findByIsbn(book.getIsbn());
         if (existingBook.isPresent()) {
@@ -34,10 +39,21 @@ public class BookService {
         }
         return bookRepository.save(book);
     }
+
+    /**
+     * Get all books.
+     * @return List<Book>
+     */
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
     }
 
+    /**
+     * Borrow a book.
+     * @param borrowerId
+     * @param bookId
+     * @return Book
+     */
     public Book borrowBook(Long borrowerId, Long bookId) {
         Optional<Book> bookOptional = bookRepository.findById(bookId);
         if (!bookOptional.isPresent()) {
@@ -60,6 +76,12 @@ public class BookService {
         return bookRepository.save(book);
     }
 
+    /**
+     * Return a book.
+     * @param borrowerId
+     * @param bookId
+     * @return Book
+     */
     public Book returnBook(Long borrowerId, Long bookId) {
         Optional<Book> bookOptional = bookRepository.findById(bookId);
         if (!bookOptional.isPresent()) {

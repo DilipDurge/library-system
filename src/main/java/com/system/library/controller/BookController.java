@@ -21,11 +21,20 @@ public class BookController {
         this.bookService = bookService;
     }
 
+    /**
+     * Register a book
+     * @param book
+     * @return Book
+     */
     @PostMapping
     public ResponseEntity<Book> registerBook(@Valid @RequestBody Book book) {
         return ResponseEntity.ok(bookService.registerBook(book));
     }
 
+    /**
+     * Get all books
+     * @return List<Book>
+     */
     @GetMapping
     public ResponseEntity<List<Book>> getAllBooks() {
         return ResponseEntity.ok(bookService.getAllBooks());
