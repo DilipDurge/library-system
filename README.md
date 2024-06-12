@@ -49,11 +49,14 @@ A simple library management system built with Spring Boot. This project demonstr
     ```bash
     mvn spring-boot:run
     ```
-
+   Or using JAR file
+   ```bash
+   java -jar target/library-system-0.0.1-SNAPSHOT.jar
+   ```
    Or you can build the Docker image and run it in a container:
 
     ```bash
-    docker build -t library-system:latest .
+    docker build -tag=library-system:latest .
     docker run -p 8080:8080 library-system:latest
     ```
 

@@ -2,8 +2,12 @@ version: '3.8'
 
 services:
   app:
+    container_name: library-system
+    build:
+        context: docker-library-system
+        dockerfile: Dockerfile
     image: library-system:latest
-    build: .
+   # build: .
     ports:
       - "8080:8080"
     depends_on:

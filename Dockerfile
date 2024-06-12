@@ -1,6 +1,8 @@
 # Use the official OpenJDK image as a parent image
 FROM openjdk:17
 
+RUN mkdir /app
+
 # Set the working directory in the container
 WORKDIR /app
 #VOLUME /tmp
